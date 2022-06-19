@@ -1,0 +1,25 @@
+{
+  "name": "desafio-crud-pontos-no-mapa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "jest --coverage ./src/test",
+    "test:watch": "jest --watchAll",
+    "test:cov": "jest --coverage --force-exit --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "localtunnel": "^2.0.2",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.2.6"
+  }
+}
