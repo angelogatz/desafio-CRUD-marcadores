@@ -4,7 +4,7 @@ const routes = require('./routes/index.js');
 
 db.on("error", console.log.bind(console, 'Connection failed'));
 db.once("open", () => {
-    console.log('Connection successful ;)')
+    console.log('Connection successful.')
 });
 
 const app = express();

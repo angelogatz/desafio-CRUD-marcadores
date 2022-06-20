@@ -4,8 +4,8 @@ class MarcadoresController {
 
     static pegaTodosOsMarcadores = (req, res) => {
         marcadores.find((err, marcadores) => {
-            if(err || []){
-                res.status(400).send({message: 'Sem marcadores para mostrar'})
+            if(err){
+                res.status(400).send({message: err.message})
             } else {
                 res.status(200).json(marcadores)
             }
@@ -15,11 +15,14 @@ class MarcadoresController {
     static pegaUmMarcador = (req, res) => {
         const { id } = req.params
         marcadores.findById(id, function (err, umMarcador) {
-            if(err || umMarcador === null){
-                res.status(500).send({message: 'Marcador não encontrado ou ja foi excluído.'})
+            if(err){
+                res.status(500).send({message: err.message})
+            }else if(umMarcador === null){
+                res.status(400).send({message: 'Marcador não encontrado ou ja foi excluído.'})
             } else {
                 res.status(200).json(umMarcador)
             }
+            
         })
     }
 
